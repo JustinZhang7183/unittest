@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.justin.unittest.dao.UserDao">
+    <insert id="initializeUserTable">
+        create table user (
+            `id` bigint,
+            `name` varchar(50),
+            `age` int,
+            `phone_number` varchar(50)
+        ) engine=InnoDB
+    </insert>
+
+    <insert id="insert">
+        insert into user values
+                             (
+                              #{user.id},
+                              #{user.name},
+                              #{user.age},
+                              #{user.phoneNumber}
+                             )
+    </insert>
+
+    <update id="truncateUserTable">
+        drop table user
+    </update>
+
+    <select id="queryByName" resultType="com.justin.unittest.po.User">
+        select
+            id,
+            name,
+            age,
+            phone_number as phoneNumber
+            from user where `name` = #{name}
+    </select>
+</mapper>
