@@ -4,15 +4,33 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * description: persistent object of user.
+ *
+ * @author Justin_Zhang
+ * @date 11/6/2022 2:10 PM
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-    private Long id;
+  /**
+   * user's id.
+   */
+  private Long id;
 
-    private String name;
+  /**
+   * user's name.
+   */
+  private String name;
 
-    private Integer age;
+  /**
+   * user's age.
+   */
+  private Integer age;
 
-    private String phoneNumber;
+  /**
+   * user's phone number.
+   */
+  private String phoneNumber;
 }
