@@ -20,6 +20,12 @@ import org.junit.jupiter.api.Test;
  */
 @Slf4j
 public class StandardTest {
+  /**
+   * description: the method which is annotated by @BeforeAll should be static,
+   * unless there is a configuration in junit-platform.properties like:
+   * junit.jupiter.testinstance.lifecycle.default = per_class
+   * or there is a relevant annotation on class.
+   */
   @BeforeAll
   static void initAll() {
     log.info("init all");
