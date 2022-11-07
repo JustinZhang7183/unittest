@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Test;
  * @author Justin_Zhang
  * @date 11/6/2022 16:33
  */
-@Disabled("Disabled until bug #99 has been fixed")
+//@Disabled("Disabled until bug #99 has been fixed")
 public class DisabledTest {
   @Test
-//  @Disabled
+  @Disabled
   void test_will_be_skipped() {
     Assertions.assertEquals(1, 3);
   }
