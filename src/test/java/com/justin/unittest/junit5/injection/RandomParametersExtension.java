@@ -1,7 +1,6 @@
 package com.justin.unittest.junit5.injection;
 
 import java.lang.reflect.Parameter;
-
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
@@ -15,12 +14,14 @@ import org.junit.jupiter.api.extension.ParameterResolver;
  */
 public class RandomParametersExtension implements ParameterResolver {
   @Override
-  public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+  public boolean supportsParameter(ParameterContext parameterContext,
+      ExtensionContext extensionContext) throws ParameterResolutionException {
     return parameterContext.isAnnotated(Random.class);
   }
 
   @Override
-  public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+  public Object resolveParameter(ParameterContext parameterContext,
+      ExtensionContext extensionContext) throws ParameterResolutionException {
     return getRandomValue(parameterContext.getParameter(), extensionContext);
   }
 
