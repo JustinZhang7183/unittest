@@ -41,6 +41,7 @@ public class StandardTest {
   }
 
   @Test
+  @Disabled("just for demonstrate")
   void failingTest() {
     fail("a failing test");
   }

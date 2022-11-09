@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -51,6 +52,7 @@ public class AssertionTest {
    * description: this test will fail after 5 seconds.
    */
   @Test
+  @Disabled("just for demonstrate")
   public void timeout_exceeded() {
     Assertions.assertTimeout(Duration.ofSeconds(1), () -> TimeUnit.SECONDS.sleep(5));
   }
@@ -59,6 +61,7 @@ public class AssertionTest {
    * description: this test will fail after 1 second because it executes by other thread.
    */
   @Test
+  @Disabled("just for demonstrate")
   public void timeout_exceeded_with_preemptive_termination() {
     Assertions.assertTimeoutPreemptively(Duration.ofSeconds(1), () -> TimeUnit.SECONDS.sleep(5));
   }
